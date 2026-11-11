@@ -1,0 +1,134 @@
+
+.tree-stage {
+  position: relative;
+  width: min(100%, 400px);
+  aspect-ratio: 400 / 520;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.tree-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.green-tree .branch {
+  fill: url(#green-branches);
+  stroke: #174b35;
+  stroke-width: 2;
+}
+
+.white-tree .branch {
+  fill: url(#white-branches);
+  stroke: #a9bfd8;
+  stroke-width: 2;
+  filter: drop-shadow(0 4px 5px rgba(20, 35, 60, 0.25));
+}
+
+.tree-star {
+  filter: drop-shadow(0 0 8px rgba(255, 220, 122, 0.9));
+}
+
+/* Провод гирлянды */
+.tree-garland-wire {
+  fill: none;
+  stroke: #d3b36b;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  opacity: 0.95;
+}
+
+.tree-garland-socket {
+  stroke: #d3b36b;
+  stroke-width: 1.5;
+}
+
+/* Провод белой ёлки темнее */
+.white-tree .tree-garland-wire {
+  stroke: #53617a;
+  stroke-width: 2.2;
+  opacity: 0.95;
+}
+
+.white-tree .tree-garland-socket {
+  stroke: #53617a;
+  stroke-width: 1.5;
+}
+
+/* Выключенная гирлянда */
+.tree-garland-bulb {
+  opacity: 0.3;
+  filter: none;
+  animation: none;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Одинаковое свечение обеих гирлянд */
+.garland-on .tree-garland-bulb {
+  opacity: 1;
+  animation: treeTwinkle 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes treeTwinkle {
+  0% {
+    opacity: 0.45;
+    filter: drop-shadow(0 0 2px currentColor);
+    transform: scale(0.88);
+  }
+
+  35% {
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 5px currentColor)
+      drop-shadow(0 0 11px currentColor);
+    transform: scale(1.12);
+  }
+
+  65% {
+    opacity: 0.65;
+    filter: drop-shadow(0 0 3px currentColor);
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 7px currentColor)
+      drop-shadow(0 0 13px currentColor);
+    transform: scale(1.08);
+  }
+}
+
+/* Украшения */
+.tree-decoration {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+  cursor: grab;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+.tree-decoration:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 600px) {
+  .tree-decoration {
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+  }
+}

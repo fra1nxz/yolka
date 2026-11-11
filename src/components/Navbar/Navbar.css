@@ -1,0 +1,209 @@
+
+.navbar {
+  position: relative;
+  z-index: 20;
+  flex-shrink: 0;
+  width: 100%;
+  height: 75px;
+  padding: 5px 15px;
+  box-sizing: border-box;
+  background: #070c24;
+  border-bottom: 1px solid #151d40;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.navbar-logo {
+  display: flex;
+  flex-direction: column;
+  color: #f5f5f5;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.navbar-logo span {
+  color: #aab3d0;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 32px;
+}
+
+.navbar-links a {
+  color: #c1c9e0;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: #ffffff;
+}
+
+/* Гирлянда */
+.navbar-garland {
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  width: 100%;
+  height: 60px;
+  pointer-events: none;
+}
+
+.navbar-garland-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.navbar-wire {
+  fill: none;
+  stroke: #8d98aa;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.navbar-bulb-wire {
+  stroke: #8d98aa;
+  stroke-width: 1;
+}
+
+.navbar-bulb,
+.navbar-hanging-bulb {
+  fill: #e8ae42;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Включённая гирлянда */
+.navbar-garland.is-on .navbar-bulb,
+.navbar-garland.is-on .navbar-hanging-bulb {
+  animation: navbarTwinkle 2.2s ease-in-out infinite alternate;
+  filter:
+    drop-shadow(0 0 5px #ffd875)
+    drop-shadow(0 0 10px rgba(255, 216, 117, 0.7));
+}
+
+/* Выключенная гирлянда */
+.navbar-garland.is-off .navbar-bulb,
+.navbar-garland.is-off .navbar-hanging-bulb {
+  opacity: 0.25;
+  filter: none;
+  animation: none;
+}
+
+/* Настоящая кнопка переключения */
+.navbar-garland-toggle {
+  position: absolute;
+  top: 30px;
+  right: 45px;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+  padding: 0;
+
+  border: 1px solid rgba(232, 174, 66, 0.5);
+  border-radius: 50%;
+  background: #070c24;
+
+  cursor: pointer;
+  pointer-events: auto;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.navbar-garland-toggle:hover {
+  background: #151d40;
+  border-color: #ffd875;
+}
+
+.navbar-toggle-indicator {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #e8ae42;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Индикатор включён */
+.navbar-garland.is-on .navbar-toggle-indicator {
+  background: #ffd875;
+  box-shadow: 0 0 5px #ffd875, 0 0 10px rgba(255, 216, 117, 0.8);
+}
+
+/* Индикатор выключен */
+.navbar-garland.is-off .navbar-toggle-indicator {
+  background: #596174;
+  box-shadow: none;
+}
+
+@keyframes navbarTwinkle {
+  0% {
+    opacity: 0.45;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.65;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    height: 70px;
+  }
+
+  .navbar-logo {
+    font-size: 18px;
+  }
+
+  .navbar-logo span {
+    font-size: 9px;
+  }
+
+  .navbar-links {
+    gap: 15px;
+  }
+
+  .navbar-links a {
+    font-size: 12px;
+  }
+
+  .navbar-garland-toggle {
+    right: 45px;
+  }
+}

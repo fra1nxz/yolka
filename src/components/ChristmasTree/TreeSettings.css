@@ -1,0 +1,55 @@
+.tree-settings {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 210px;
+  padding: 16px;
+  margin-top: 12px;
+
+  background: rgba(17, 26, 66, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.tree-settings h3 {
+  margin: 0 0 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.tree-settings button {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+
+  background: #1b2860;
+  color: white;
+
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tree-settings button:hover {
+  background: #293b82;
+}
+
+.settings-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 4px 0;
+}
+
+.settings-hint {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: #aab5dc;
+  text-align: center;
+}

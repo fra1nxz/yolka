@@ -1,0 +1,47 @@
+.snow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.snow::before,
+.snow::after {
+  content: "";
+  position: absolute;
+  inset: -100% 0 0;
+  background-repeat: repeat;
+  animation: snowfall linear infinite;
+}
+
+.snow::before {
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, white 50%, transparent 100%),
+    radial-gradient(2px 2px at 100px 150px, white 50%, transparent 100%),
+    radial-gradient(3px 3px at 180px 80px, white 50%, transparent 100%);
+
+  background-size: 250px 250px;
+  opacity: 0.6;
+  animation-duration: 12s;
+}
+
+.snow::after {
+  background-image:
+    radial-gradient(3px 3px at 50px 50px, white 50%, transparent 100%),
+    radial-gradient(3px 3px at 150px 180px, white 50%, transparent 100%);
+
+  background-size: 300px 300px;
+  opacity: 0.35;
+  animation-duration: 20s;
+}
+
+@keyframes snowfall {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 300px;
+  }
+}

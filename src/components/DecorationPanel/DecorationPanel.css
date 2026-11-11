@@ -1,0 +1,55 @@
+.decoration-panel {
+  width: 250px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background: rgba(18, 29, 69, 0.85);
+  color: white;
+  backdrop-filter: blur(15px);
+}
+
+.decoration-panel h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.panel-description {
+  margin: 8px 0 20px;
+  color: #aab5dc;
+  font-size: 12px;
+}
+
+.decoration-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.decoration-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 95px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: #1b2860;
+  color: white;
+  cursor: grab;
+  touch-action: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.decoration-option:hover {
+  background: #293b82;
+  transform: translateY(-2px);
+}
+
+.decoration-option span {
+  font-size: 32px;
+}
+
+.decoration-option small {
+  font-size: 11px;
+}
